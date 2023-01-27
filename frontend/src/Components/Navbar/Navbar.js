@@ -34,7 +34,7 @@ function Navbar() {
                         Cougar Cafe
                     </Typography>
                     <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                        <Button color="inherit">Menu</Button>
+                        <Button href="/menu" color="inherit">Menu</Button>
                         <Button color="inherit">Reservations</Button>
                         <Button color="inherit">About</Button>
                     </Box>

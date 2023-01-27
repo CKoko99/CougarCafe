@@ -58,4 +58,99 @@ class MenuController{
             var_dump( $e->getMessage());
         }
     }
+    public function getAppetizers(){
+        try{
+            //allow headers
+            header('Access-Control-Allow-Origin: *');
+            header('Access-Control-Allow-Headers: *');
+
+            $sql = "SELECT * FROM Products WHERE category_id = '1'";
+            $result = $this->conn->query($sql);
+            $data = [];
+            if($result->num_rows > 0){
+                while($row = $result->fetch_assoc()){
+                    $data[] = $row;
+                }
+            } 
+            echo json_encode($data, JSON_PRETTY_PRINT);
+        }catch(Exception $e){
+            var_dump( $e->getMessage());
+        }
+    }
+    public function getSalads(){
+        try{
+            //allow headers
+            header('Access-Control-Allow-Origin: *');
+            header('Access-Control-Allow-Headers: *');
+
+            $sql = "SELECT * FROM Products WHERE category_id = '2'";
+            $result = $this->conn->query($sql);
+            $data = [];
+            if($result->num_rows > 0){
+                while($row = $result->fetch_assoc()){
+                    $data[] = $row;
+                }
+            } 
+            echo json_encode($data, JSON_PRETTY_PRINT);
+        }catch(Exception $e){
+            var_dump( $e->getMessage());
+        }
+    }
+    public function getEntrees(){
+        try{
+            //allow headers
+            header('Access-Control-Allow-Origin: *');
+            header('Access-Control-Allow-Headers: *');
+
+            $sql = "SELECT * FROM Products WHERE category_id = '3'";
+            $result = $this->conn->query($sql);
+            $data = [];
+            if($result->num_rows > 0){
+                while($row = $result->fetch_assoc()){
+                    $data[] = $row;
+                }
+            } 
+            echo json_encode($data, JSON_PRETTY_PRINT);
+        }catch(Exception $e){
+            var_dump( $e->getMessage());
+        }
+    }
+    public function getDesserts(){
+        try{
+            //allow headers
+            header('Access-Control-Allow-Origin: *');
+            header('Access-Control-Allow-Headers: *');
+
+            $sql = "SELECT * FROM Products WHERE category_id = '4'";
+            $result = $this->conn->query($sql);
+            $data = [];
+            if($result->num_rows > 0){
+                while($row = $result->fetch_assoc()){
+                    $data[] = $row;
+                }
+            } 
+            echo json_encode($data, JSON_PRETTY_PRINT);
+        }catch(Exception $e){
+            var_dump( $e->getMessage());
+        }
+    }
+    public function getDrinks(){
+        try{
+            //allow headers
+            header('Access-Control-Allow-Origin: *');
+            header('Access-Control-Allow-Headers: *');
+
+            $sql = "SELECT * FROM Products WHERE category_id = '5'";
+            $result = $this->conn->query($sql);
+            $data = [];
+            if($result->num_rows > 0){
+                while($row = $result->fetch_assoc()){
+                    $data[] = $row;
+                }
+            } 
+            echo json_encode($data, JSON_PRETTY_PRINT);
+        }catch(Exception $e){
+            var_dump( $e->getMessage());
+        }
+    }
 }

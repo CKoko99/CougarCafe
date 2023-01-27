@@ -14,9 +14,11 @@ $current_link = $_SERVER['REQUEST_URI'];
 
 $urls = [
     '/CougarCafe/Api/MenuFavs' => ['MenuController@getFavorites'],
-    '/reservations' => 'ReservationsController',
-    '/about' => 'AboutController',
-    '/home' => 'HomeController',
+    '/CougarCafe/Api/Menu/Appetizers' => ['MenuController@getAppetizers'],
+    '/CougarCafe/Api/Menu/Salads' => ['MenuController@getSalads'],
+    '/CougarCafe/Api/Menu/Entrees' => ['MenuController@getEntrees'],
+    '/CougarCafe/Api/Menu/Desserts' => ['MenuController@getDesserts'],
+    '/CougarCafe/Api/Menu/Drinks' => ['MenuController@getDrinks'],
 ];
 
 //check if routes are available

@@ -22,7 +22,6 @@ const useStyles = makeStyles({
         minHeight: "200px",
         margin: "auto",
         backgroundColor: "white",
-
     }
 });
 
