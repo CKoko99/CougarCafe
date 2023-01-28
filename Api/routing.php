@@ -11,7 +11,7 @@ header('Access-Control-Allow-Origin: *');
 $current_link = $_SERVER['REQUEST_URI'];
 
 
-
+//url for menu item via id
 $urls = [
     '/CougarCafe/Api/MenuFavs' => ['MenuController@getFavorites'],
     '/CougarCafe/Api/Menu/Appetizers' => ['MenuController@getAppetizers'],
@@ -19,6 +19,7 @@ $urls = [
     '/CougarCafe/Api/Menu/Entrees' => ['MenuController@getEntrees'],
     '/CougarCafe/Api/Menu/Desserts' => ['MenuController@getDesserts'],
     '/CougarCafe/Api/Menu/Drinks' => ['MenuController@getDrinks'],
+    '/CougarCafe/Api/Menu/item/$id' => ['MenuController@getMenuById'],
 ];
 
 //check if routes are available

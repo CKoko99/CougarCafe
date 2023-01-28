@@ -2,6 +2,7 @@ import { Button, Typography } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useEffect } from 'react';
 import { useState } from 'react';
+import FoodCard from '../UI/Card/FoodCard';
 
 export default function MenuPage() {
     const [appetizersList, setAppetizersList] = useState([]);
@@ -10,7 +11,7 @@ export default function MenuPage() {
     const [dessertsList, setDessertsList] = useState([]);
     const [drinksList, setDrinksList] = useState([]);
 
-    const [activeMenu, setActiveMenu] = useState("appetizers");
+    const [activeMenu, setActiveMenu] = useState("Appetizers");
 
     const handleMenuClick = (menu) => {
         setActiveMenu(menu);
@@ -40,15 +41,12 @@ export default function MenuPage() {
     useEffect(() => {
         fetchAppetizers().then((data) => {
             setAppetizersList(data);
-            console.log(data);
         })
         fetchSalads().then((data) => {
             setSaladsList(data);
-            console.log(data);
         })
         fetchEntrees().then((data) => {
             setEntreesList(data);
-            console.log(data);
         })
         fetchDesserts().then((data) => {
             setDessertsList(data);
@@ -56,7 +54,6 @@ export default function MenuPage() {
         })
         fetchDrinks().then((data) => {
             setDrinksList(data);
-            console.log(data);
         })
     }, []);
 
@@ -68,10 +65,61 @@ export default function MenuPage() {
                     <Button onClick={() => handleMenuClick("Appetizers")}>Appetizers</Button>
                     <Button onClick={() => handleMenuClick("Salads")}>Salads</Button>
                     <Button onClick={() => handleMenuClick("Entrees")}>Entrees</Button>
-                    <Button onClick={() => handleMenuClick("Dessrts")}>Desserts</Button>
+                    <Button onClick={() => handleMenuClick("Desserts")}>Desserts</Button>
                     <Button onClick={() => handleMenuClick("Drinks")}>Drinks</Button>
                 </Box>
-
+                <Box>
+                    {activeMenu === "Appetizers" && appetizersList.map((item) => {
+                        return (
+                            <FoodCard
+                                name={item.name}
+                                description={item.description}
+                                price={item.price}
+                                image={item.image}
+                            />
+                        )
+                    })}
+                    {activeMenu === "Salads" && saladsList.map((item) => {
+                        return (
+                            <FoodCard
+                                name={item.name}
+                                description={item.description}
+                                price={item.price}
+                                image={item.image}
+                            />
+                        )
+                    })}
+                    {activeMenu === "Entrees" && entreesList.map((item) => {
+                        return (
+                            <FoodCard
+                                name={item.name}
+                                description={item.description}
+                                price={item.price}
+                                image={item.image}
+                            />
+                        )
+                    })}
+                    {activeMenu === "Desserts" && dessertsList.map((item) => {
+                        return (
+                            <FoodCard
+                                name={item.name}
+                                description={item.description}
+                                price={item.price}
+                                image={item.image}
+                            />
+                        )
+                    })}
+                    {activeMenu === "Drinks" && drinksList.map((item) => {
+                        return (
+                            <FoodCard
+                                name={item.name}
+                                description={item.description}
+                                price={item.price}
+                                image={item.image}
+                            />
+                        )
+                    })}
+                </Box>
             </Box>
         </>
     )

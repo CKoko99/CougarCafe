@@ -153,4 +153,24 @@ class MenuController{
             var_dump( $e->getMessage());
         }
     }
+    //get menu by id
+    public function getMenuById($id){
+        try{
+            //allow headers
+            header('Access-Control-Allow-Origin: *');
+            header('Access-Control-Allow-Headers: *');
+
+            $sql = "SELECT * FROM Products WHERE id = '$id'";
+            $result = $this->conn->query($sql);
+            $data = [];
+            if($result->num_rows > 0){
+                while($row = $result->fetch_assoc()){
+                    $data[] = $row;
+                }
+            } 
+            echo json_encode($data, JSON_PRETTY_PRINT);
+        }catch(Exception $e){
+            var_dump( $e->getMessage());
+        }
+    }
 }
