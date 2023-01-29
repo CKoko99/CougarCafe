@@ -27,7 +27,7 @@ const useStyles = makeStyles({
 
 function Home() {
 
-    const classes= useStyles();
+    const classes = useStyles();
     const [menuFavs, setMenuFavs] = useState([]);
 
     //fetch the menu favorites from the backend
@@ -47,14 +47,18 @@ function Home() {
 
     return (
         <Box className={classes.root}>
-            <Banner image={CafeBanner} />
-            <Box className={classes.menuSection} sx={{width: { xs: "90%", md: "90%" }}}>
+            <Banner image={CafeBanner} heading="Welcome to Cougar Cafe"
+                subHeading="Where every meal is a wild experience"
+                cta="Explore Menu"
+                link="/menu"
+            />
+            <Box className={classes.menuSection} sx={{ width: { xs: "90%", md: "90%" } }}>
                 <ExploreMenu />
             </Box>
             <Banner image={CafeBanner2} />
-            <Box className={classes.menuSection} sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", minHeight: { xs: "200px" } }}>
-                <Typography variant="h4" component="div" sx={{ flexGrow: 1, textAlign: "center" }}> Menu Favorites </Typography>
-                <Box  sx={{ display: "flex", textAlign: "left", flexWrap: "wrap", justifyContent: "center" }}>
+            <Box className={classes.menuSection} sx={{ width: "90%" }}>
+                <Typography variant="h4" component="div" sx={{ flexGrow: 1, textAlign: "center", paddingTop: ".5em" }}> Menu Favorites </Typography>
+                <Box sx={{ display: "flex", textAlign: "left", flexWrap: "wrap", justifyContent: "center", }}>
                     {menuFavs.map((item) => {
                         return (
                             <FoodCard key={item.id} name={item.name} description={item.description} image={item.image} price={item.price} />

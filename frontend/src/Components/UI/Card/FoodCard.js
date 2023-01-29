@@ -19,23 +19,23 @@ export default function FoodCard(props) {
 
     return (
         <Card className={classes.root}>
-            <CardMedia
-                className={classes.media}
-                image={props.image}
-                title={props.name}
-            />
-            <CardContent>
-                <Box sx={{display: "flex", alignItems: "center", justifyContent: "space-between"}}>
+                <CardMedia
+                    className={classes.media}
+                    image={props.image}
+                    title={props.name}
+                />
+                <CardContent>
+                    <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between" }}>
 
-                    <Typography variant="h5" component="div">
-                        {props.name}
+                        <Typography variant="h5" component="div">
+                            {props.name}
+                        </Typography>
+                        <Button>{props.price}</Button>
+                    </Box>
+                    <Typography variant="body2" color="text.secondary">
+                        {props.description}
                     </Typography>
-                    <Button>{props.price}</Button>
-                </Box>
-                <Typography variant="body2" color="text.secondary">
-                    {props.description}
-                </Typography>
-            </CardContent>
+                </CardContent>
         </Card>
     );
 }

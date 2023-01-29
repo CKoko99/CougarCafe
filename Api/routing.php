@@ -19,7 +19,8 @@ $urls = [
     '/CougarCafe/Api/Menu/Entrees' => ['MenuController@getEntrees'],
     '/CougarCafe/Api/Menu/Desserts' => ['MenuController@getDesserts'],
     '/CougarCafe/Api/Menu/Drinks' => ['MenuController@getDrinks'],
-    '/CougarCafe/Api/Menu/item/$id' => ['MenuController@getMenuById'],
+    '/CougarCafe/Api/Reservation/get' => ['ReservationController@getReservations'],
+    '/CougarCafe/Api/Reservation/add' => ['ReservationController@addReservation'],
 ];
 
 //check if routes are available
