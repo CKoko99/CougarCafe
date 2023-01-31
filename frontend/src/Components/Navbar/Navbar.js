@@ -33,9 +33,9 @@ function Navbar() {
                         </IconButton>
                         <Button href="/" color="inherit">Cougar Cafe</Button>
                         <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-                            <Button href="/menu" color="inherit">Menu</Button>
-                            <Button color="inherit">Reservations</Button>
-                            <Button color="inherit">About</Button>
+                            <Button href="/Menu" color="inherit">Menu</Button>
+                            <Button href="/Reservations" color="inherit">Reservations</Button>
+                            <Button href="/About" color="inherit">About</Button>
                         </Box>
                     </Box>
                 </Toolbar>
@@ -57,7 +57,7 @@ function Navbar() {
                             <ListItemText primary="Cougar Cafe" />
                         </ListItem>
                         <Divider variant="middle" />
-                        <ListItem href="/menu"component={Link}>
+                        <ListItem href="/Menu"component={Link}>
                             <ListItemText  primary="Menu" />
                         </ListItem>
                         <ListItem href="/Reservations" component={Link}>

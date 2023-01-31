@@ -4,6 +4,7 @@ require('services/DB.php');
 use services\DB;
 use Api\Api;
 require('controllers/MenuController.php');
+require('controllers/ReservationController.php');
 require('Api.php');
 
 header('Access-Control-Allow-Origin: *');
